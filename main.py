@@ -7,6 +7,7 @@ pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 # Lista de placas
 lista_de_placas = ["ABC123", "XYZ789", "123ABC", "789XYZ", "BRA2E19"]
 
+
 def capture_and_ocr():
     # Inicializar a câmera (0 indica a câmera padrão)
     cap = cv2.VideoCapture(0)
@@ -45,6 +46,7 @@ def capture_and_ocr():
     # Liberar a câmera e fechar a janela
     cap.release()
     cv2.destroyAllWindows()
+
 
 if __name__ == "__main__":
     capture_and_ocr()
