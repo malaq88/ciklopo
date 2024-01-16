@@ -1,3 +1,5 @@
+import re
+
 import cv2
 import pytesseract
 
@@ -30,6 +32,8 @@ def capture_and_ocr():
         print("Texto da placa:", text)
 
         # Verificar se a placa reconhecida está na lista
+        regex_mercosul = re.compile(r'^[A-Z]{3}\d[A-Z]\d{2}$')
+        regex_brasil = re.compile(r'^[A-Z]{3}\d{4}$')
         if any(placa in text for placa in lista_de_placas):
             print("Placa encontrada:", text)
             break
